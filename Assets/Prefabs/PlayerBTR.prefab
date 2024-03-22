@@ -79,7 +79,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneId: 0
-  _assetId: 4113476743
+  _assetId: 30568819
   serverOnly: 0
   visibility: 0
   hasSpawned: 0
@@ -343,14 +343,14 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8975645144656004618, guid: 9be2270c826b02140b8dd77eb97ce73f,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1807149855786393698}
     - targetCorrespondingSourceObject: {fileID: 8975645144035674477, guid: 9be2270c826b02140b8dd77eb97ce73f,
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 3713935119807137805}
+    - targetCorrespondingSourceObject: {fileID: 8975645144656004618, guid: 9be2270c826b02140b8dd77eb97ce73f,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1807149855786393698}
     - targetCorrespondingSourceObject: {fileID: 560750966138637173, guid: 9be2270c826b02140b8dd77eb97ce73f,
         type: 3}
       insertIndex: -1
