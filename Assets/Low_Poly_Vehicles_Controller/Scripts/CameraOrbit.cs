@@ -24,10 +24,14 @@ public class CameraOrbit : NetworkBehaviour
     private float _CameraDistance;
     private float _CameraFov;
 
+    private TechSelection _techSelection;
+
+
     // Use this for initialization
     void Start()
     {
         cam = GetComponent<Camera>();
+        _techSelection = transform.root.GetComponent<TechSelection>();
 
         _XForm_Camera = transform;
         _XForm_Parent = transform.parent;
@@ -37,6 +41,9 @@ public class CameraOrbit : NetworkBehaviour
     {
         if (!isLocalPlayer)
             cam.gameObject.SetActive(false);
+
+        if (_techSelection != null)
+            _techSelection.floatingInfo.transform.LookAt(_techSelection.floatingInfo.transform.position - (cam.transform.position - _techSelection.floatingInfo.transform.position));
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;

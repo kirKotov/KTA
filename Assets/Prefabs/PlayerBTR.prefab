@@ -446,7 +446,7 @@ MonoBehaviour:
   syncInterval: 0
   target: {fileID: 7948394707372572812}
   syncPosition: 1
-  syncRotation: 1
+  syncRotation: 0
   syncScale: 0
   onlySyncOnChange: 1
   compressRotation: 1
