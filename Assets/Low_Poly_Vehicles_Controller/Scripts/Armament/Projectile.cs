@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
@@ -18,7 +16,5 @@ public class Projectile : MonoBehaviour
         GameObject hit = Instantiate(hitPrefab, transform.position, Quaternion.FromToRotation(hitPrefab.transform.up, transform.forward)) as GameObject;
         Destroy(hit, hitDestroyTime);
         Destroy(gameObject);
-
-        Destroy(collision.gameObject);
     }
 }

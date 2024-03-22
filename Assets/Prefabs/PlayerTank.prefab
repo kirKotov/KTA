@@ -42,6 +42,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1179002874405839196}
   - component: {fileID: 6521047527121916322}
+  - component: {fileID: 2529815378191877472}
   m_Layer: 0
   m_Name: PlayerTank
   m_TagString: Untagged
@@ -84,6 +85,25 @@ MonoBehaviour:
   serverOnly: 0
   visibility: 0
   hasSpawned: 0
+--- !u!114 &2529815378191877472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1490215180444406505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b059fc8718f11ad44a9684b51aeae5ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
+  floatingInfo: {fileID: 9129799369998039625}
+  techNumber: 0
+  textMeshName: {fileID: 876633391033339531}
+  playerNickname: 
 --- !u!1 &1524004362307427375
 GameObject:
   m_ObjectHideFlags: 0
@@ -264,6 +284,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9129799369998039625}
+  - component: {fileID: 3086756962568424773}
   m_Layer: 0
   m_Name: FloatingInfo
   m_TagString: Untagged
@@ -287,6 +308,40 @@ Transform:
   - {fileID: 8766913973470489473}
   m_Father: {fileID: 1179002874405839196}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3086756962568424773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3319321899367630138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ff3ba0becae47b8b9381191598957c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncDirection: 1
+  syncMode: 0
+  syncInterval: 0
+  target: {fileID: 9129799369998039625}
+  syncPosition: 1
+  syncRotation: 1
+  syncScale: 0
+  onlySyncOnChange: 1
+  compressRotation: 1
+  interpolatePosition: 1
+  interpolateRotation: 1
+  interpolateScale: 1
+  coordinateSpace: 0
+  sendIntervalMultiplier: 1
+  timelineOffset: 0
+  showGizmos: 0
+  showOverlay: 0
+  overlayColor: {r: 0, g: 0, b: 0, a: 0.5}
+  onlySyncOnChangeCorrectionMultiplier: 2
+  rotationSensitivity: 0.01
+  positionPrecision: 0.01
+  scalePrecision: 0.01
 --- !u!1 &6366002114206986725
 GameObject:
   m_ObjectHideFlags: 0
@@ -538,6 +593,11 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 6366002114206986725}
+    - target: {fileID: 6821917938599799975, guid: acca79ba2a6d34b49af207d45181468e,
+        type: 3}
+      propertyPath: controlVehicle
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7589352504250528727, guid: acca79ba2a6d34b49af207d45181468e,
         type: 3}
       propertyPath: m_Name

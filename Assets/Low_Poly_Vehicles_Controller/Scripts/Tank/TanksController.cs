@@ -1,6 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using Mirror;
 
 [System.Serializable]
 public class Track
@@ -11,7 +10,7 @@ public class Track
 	public Transform[] wheelsBones;
 }
 
-public class TanksController : MonoBehaviour
+public class TanksController : NetworkBehaviour
 {
 	public bool controlVehicle;
 
@@ -36,19 +35,34 @@ public class TanksController : MonoBehaviour
 	private float rightTrackSpeed;
 	private AudioSource aSource;
 
-	private void Start()
+    private TechSelection _techSelection;
+	private Camera _camera;
+
+    private void Start()
 	{
 		rb = GetComponent<Rigidbody>();
 		rb.centerOfMass = centerOfMass;
 		aSource = GetComponent<AudioSource>();
 
-		leftTrack.enable = true;
+        _techSelection = transform.root.GetComponent<TechSelection>();
+        _camera = transform.root.GetComponentInChildren<Camera>();
+
+        leftTrack.enable = true;
 		rightTrack.enable = true;
 	}
 
 	private void Update()
 	{
-		if (controlVehicle)
+        if (!isLocalPlayer)
+            return;
+
+        if (_techSelection != null && _camera != null)
+        {
+            _techSelection.floatingInfo.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + 4.5f, gameObject.transform.position.z);
+            _techSelection.floatingInfo.transform.LookAt(_techSelection.floatingInfo.transform.position - (_camera.transform.position - _techSelection.floatingInfo.transform.position));
+        }
+
+        if (controlVehicle)
 		{
 			GetComponent<AudioSource>().enabled = true;
 			GetComponent<GunsController>().gunsActive = true;
@@ -65,12 +79,15 @@ public class TanksController : MonoBehaviour
 			return;
 
 		Movements();
-		EngineSound();
+        CmdEngineSound();
 	}
 
 	private void FixedUpdate()
 	{
-		UpdateWheelPoses();
+        if (!isLocalPlayer)
+            return;
+
+        UpdateWheelPoses();
 
 		if (!controlVehicle)
 			return;
@@ -180,8 +197,16 @@ public class TanksController : MonoBehaviour
 
 		_wheelBone.position = _pos;
 	}
-	private void EngineSound()
-	{
-		aSource.pitch = 1 + (currentSpeed / topSpeed) * 2f;
-	}
+
+    [Command]
+    private void CmdEngineSound()
+    {
+        RpcEngineSound();
+    }
+
+    [ClientRpc]
+    private void RpcEngineSound()
+    {
+        aSource.pitch = 1 + (currentSpeed / topSpeed) * 2f;
+    }
 }

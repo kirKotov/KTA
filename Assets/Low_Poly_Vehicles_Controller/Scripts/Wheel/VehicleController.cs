@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Mirror;
+using UnityEngine.UIElements;
 
 [System.Serializable]
 public class wheel
@@ -34,13 +35,20 @@ public class VehicleController : NetworkBehaviour
 	private float m_verticalInput;
 	private AudioSource aSource;
 
+	private TechSelection _techSelection;
+	private Camera _camera;
+
 	private void Start()
 	{
-		rb = GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody>();
 		rb.centerOfMass = centerOfMass;
 		aSource = GetComponent<AudioSource>();
 
-		for (int i = 0; i < wheels.Length; i++)
+        _techSelection = transform.root.GetComponent<TechSelection>();
+		_camera = transform.root.GetComponentInChildren<Camera>();
+
+
+        for (int i = 0; i < wheels.Length; i++)
 		{
 			wheels[i].antiStuck = wheels[i].wheelC.GetComponent<VehiclesAntiStuckSystem>();
 		}
@@ -51,7 +59,13 @@ public class VehicleController : NetworkBehaviour
 		if (!isLocalPlayer)
 			return;
 
-		if (controlVehicle)
+        if (_techSelection != null && _camera != null)
+        {
+            _techSelection.floatingInfo.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + 4.5f, gameObject.transform.position.z);
+            _techSelection.floatingInfo.transform.LookAt(_techSelection.floatingInfo.transform.position - (_camera.transform.position - _techSelection.floatingInfo.transform.position));
+        }
+
+        if (controlVehicle)
 		{
 			GetComponent<AudioSource>().enabled = true;
 			GetComponent<GunsController>().gunsActive = true;

@@ -40,9 +40,6 @@ public class CanvasRefereses : MonoBehaviour
     {
         StaticZVariables.techNumber = techNumber;
 
-        _currentInstantiatedTech = Instantiate(_techData.techPrefabs[techNumber]);
-        _techSelection = _currentInstantiatedTech.GetComponent<TechSelection>();
-
         CreateTechMessage _characterMessage = new CreateTechMessage
         {
             techNumber = StaticZVariables.techNumber,
@@ -50,16 +47,6 @@ public class CanvasRefereses : MonoBehaviour
         };
 
         NetworkManagerTechSelect.singleton.CreateTech(_characterMessage);
-
-        SetupPlayer();
-    }
-
-    public void SetupPlayer()
-    {
-        _techSelection.techNumber = StaticZVariables.techNumber;
-
-        _techSelection.playerNickname = StaticZVariables.playerNickname;
-        _techSelection.AssignName();
     }
 
     public void LoadData()
