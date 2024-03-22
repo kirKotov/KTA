@@ -1,10 +1,10 @@
-using Mirror.Examples.CharacterSelection;
 using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
+using static NetworkManagerTechSelect;
 
 public class CanvasRefereses : MonoBehaviour
 {
-    [SerializeField] private InputField _inputFieldPlayerName;
+    [SerializeField] private TMP_InputField _inputFieldPlayerName;
 
     private GameObject _currentInstantiatedTech;
     private TechSelection _techSelection;
@@ -42,6 +42,14 @@ public class CanvasRefereses : MonoBehaviour
 
         _currentInstantiatedTech = Instantiate(_techData.techPrefabs[techNumber]);
         _techSelection = _currentInstantiatedTech.GetComponent<TechSelection>();
+
+        CreateTechMessage _characterMessage = new CreateTechMessage
+        {
+            techNumber = StaticZVariables.techNumber,
+            playerNickname = StaticZVariables.playerNickname
+        };
+
+        NetworkManagerTechSelect.singleton.CreateTech(_characterMessage);
 
         SetupPlayer();
     }

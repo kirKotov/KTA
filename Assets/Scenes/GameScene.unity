@@ -247,6 +247,7 @@ GameObject:
   - component: {fileID: 143868016}
   - component: {fileID: 143868018}
   - component: {fileID: 143868017}
+  - component: {fileID: 143868019}
   m_Layer: 0
   m_Name: BTR
   m_TagString: Untagged
@@ -311,6 +312,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 143868015}
   m_CullTransparentMesh: 1
+--- !u!114 &143868019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 143868015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1438018504}
+          m_TargetAssemblyTypeName: CanvasRefereses, Assembly-CSharp
+          m_MethodName: SelectBTR
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &366443994
 GameObject:
   m_ObjectHideFlags: 0
@@ -322,6 +352,7 @@ GameObject:
   - component: {fileID: 366443995}
   - component: {fileID: 366443997}
   - component: {fileID: 366443996}
+  - component: {fileID: 366443998}
   m_Layer: 0
   m_Name: Jeep
   m_TagString: Untagged
@@ -386,6 +417,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 366443994}
   m_CullTransparentMesh: 1
+--- !u!114 &366443998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 366443994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1438018504}
+          m_TargetAssemblyTypeName: CanvasRefereses, Assembly-CSharp
+          m_MethodName: SelectJeep
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &565290466
 GameObject:
   m_ObjectHideFlags: 0
@@ -564,9 +624,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 908883714}
-  - component: {fileID: 908883715}
   - component: {fileID: 908883717}
   - component: {fileID: 908883716}
+  - component: {fileID: 908883715}
   m_Layer: 0
   m_Name: NetworkManager
   m_TagString: Untagged
@@ -598,63 +658,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 908883713}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8aab4c8111b7c411b9b92cf3dbc5bd4e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dontDestroyOnLoad: 1
-  runInBackground: 1
-  headlessStartMode: 0
-  editorAutoStart: 0
-  sendRate: 60
-  autoStartServerBuild: 0
-  autoConnectClientBuild: 0
-  offlineScene: 
-  onlineScene: 
-  transport: {fileID: 908883717}
-  networkAddress: localhost
-  maxConnections: 100
-  disconnectInactiveConnections: 0
-  disconnectInactiveTimeout: 60
-  authenticator: {fileID: 0}
-  playerPrefab: {fileID: 1490215180444406505, guid: 9ac2c03009d1ee649a2f8734ad5e4fe9,
-    type: 3}
-  autoCreatePlayer: 0
-  playerSpawnMethod: 1
-  spawnPrefabs:
-  - {fileID: 7074031623608059870, guid: 019e643abfdfc084b8394918004d340b, type: 3}
-  - {fileID: 7074031623608059870, guid: 5317b454bb874234b9983332932df2cf, type: 3}
-  - {fileID: 3699804499511396200, guid: 798149c42ad2594408da78b44433e1b6, type: 3}
-  - {fileID: 3515209465279842836, guid: 692465856a055b74c9f72fa03f0525b0, type: 3}
-  exceptionsDisconnect: 0
-  snapshotSettings:
-    bufferTimeMultiplier: 2
-    bufferLimit: 32
-    catchupNegativeThreshold: -1
-    catchupPositiveThreshold: 1
-    catchupSpeed: 0.019999999552965164
-    slowdownSpeed: 0.03999999910593033
-    driftEmaDuration: 1
-    dynamicAdjustment: 1
-    dynamicAdjustmentTolerance: 1
-    deliveryTimeEmaDuration: 2
-  evaluationMethod: 0
-  evaluationInterval: 3
-  timeInterpolationGui: 0
---- !u!114 &908883716
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 908883713}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6442dc8070ceb41f094e44de0bf87274, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   offsetX: 0
   offsetY: 0
---- !u!114 &908883717
+--- !u!114 &908883716
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -683,6 +692,55 @@ MonoBehaviour:
   debugLog: 0
   statisticsGUI: 0
   statisticsLog: 0
+--- !u!114 &908883717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 908883713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a444924e206b96848964c2ea8feb80da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dontDestroyOnLoad: 1
+  runInBackground: 1
+  headlessStartMode: 0
+  editorAutoStart: 0
+  sendRate: 60
+  autoStartServerBuild: 0
+  autoConnectClientBuild: 0
+  offlineScene: 
+  onlineScene: 
+  transport: {fileID: 908883716}
+  networkAddress: localhost
+  maxConnections: 100
+  disconnectInactiveConnections: 0
+  disconnectInactiveTimeout: 60
+  authenticator: {fileID: 0}
+  playerPrefab: {fileID: 0}
+  autoCreatePlayer: 0
+  playerSpawnMethod: 1
+  spawnPrefabs:
+  - {fileID: 1490215180444406505, guid: f36c40b1907af8140b29f1fb7dc70682, type: 3}
+  - {fileID: 1490215180444406505, guid: 9ac932a5e6b1e324ea5f8c1d8dfab365, type: 3}
+  - {fileID: 1490215180444406505, guid: cf50359ff0b9b204abd34e5b0b4565b7, type: 3}
+  exceptionsDisconnect: 0
+  snapshotSettings:
+    bufferTimeMultiplier: 2
+    bufferLimit: 32
+    catchupNegativeThreshold: -1
+    catchupPositiveThreshold: 1
+    catchupSpeed: 0.019999999552965164
+    slowdownSpeed: 0.03999999910593033
+    driftEmaDuration: 1
+    dynamicAdjustment: 1
+    dynamicAdjustmentTolerance: 1
+    deliveryTimeEmaDuration: 2
+  evaluationMethod: 0
+  evaluationInterval: 3
+  timeInterpolationGui: 0
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -1418,6 +1476,7 @@ GameObject:
   - component: {fileID: 1438018503}
   - component: {fileID: 1438018502}
   - component: {fileID: 1438018501}
+  - component: {fileID: 1438018504}
   m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
@@ -1511,6 +1570,19 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &1438018504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1438018499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f18bae4d3a1e7f848ba7b38f7c6a3c47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _inputFieldPlayerName: {fileID: 1082999436}
 --- !u!1 &1440155875
 GameObject:
   m_ObjectHideFlags: 0
@@ -1522,6 +1594,7 @@ GameObject:
   - component: {fileID: 1440155876}
   - component: {fileID: 1440155878}
   - component: {fileID: 1440155877}
+  - component: {fileID: 1440155879}
   m_Layer: 0
   m_Name: Tank
   m_TagString: Untagged
@@ -1586,6 +1659,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1440155875}
   m_CullTransparentMesh: 1
+--- !u!114 &1440155879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1440155875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1438018504}
+          m_TargetAssemblyTypeName: CanvasRefereses, Assembly-CSharp
+          m_MethodName: SelectTank
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1488846371
 GameObject:
   m_ObjectHideFlags: 0
