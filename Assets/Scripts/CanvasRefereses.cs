@@ -38,15 +38,25 @@ public class CanvasRefereses : MonoBehaviour
 
     private void TechSelected(int techNumber)
     {
+        StaticZVariables.techNumber = techNumber;
+
         _currentInstantiatedTech = Instantiate(_techData.techPrefabs[techNumber]);
         _techSelection = _currentInstantiatedTech.GetComponent<TechSelection>();
 
-        SetupPlayerName();
+        SetupPlayer();
     }
 
-    public void SetupPlayerName()
+    public void SetupPlayer()
     {
+        _techSelection.techNumber = StaticZVariables.techNumber;
+
         _techSelection.playerNickname = StaticZVariables.playerNickname;
         _techSelection.AssignName();
+    }
+
+    public void LoadData()
+    {
+        if (StaticZVariables.playerNickname != "")
+            _inputFieldPlayerName.text = StaticZVariables.playerNickname;
     }
 }
