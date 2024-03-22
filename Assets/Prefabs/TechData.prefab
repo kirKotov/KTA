@@ -44,6 +44,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b68e1ff7d009f7418444590000148ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  techPrefabs: []
-  techTitles: []
-  techHealths: 
+  techPrefabs:
+  - {fileID: 0}
+  - {fileID: 1490215180444406505, guid: f36c40b1907af8140b29f1fb7dc70682, type: 3}
+  - {fileID: 1490215180444406505, guid: 9ac932a5e6b1e324ea5f8c1d8dfab365, type: 3}
+  - {fileID: 1490215180444406505, guid: cf50359ff0b9b204abd34e5b0b4565b7, type: 3}
+  techTitles:
+  - 
+  - Jeep
+  - BTR
+  - Tank
+  techHealths: 00000000e8030000b80b000088130000
