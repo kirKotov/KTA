@@ -2104,7 +2104,6 @@ GameObject:
   - component: {fileID: 1717092247519646717}
   - component: {fileID: 1624229221714542279}
   - component: {fileID: 8109408371108035618}
-  - component: {fileID: -817089925727773791}
   m_Layer: 0
   m_Name: MRAP
   m_TagString: Vehicles
@@ -2144,6 +2143,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f359a71f1edf304e93ae6885104cab5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   controlVehicle: 0
   centerOfMass: {x: 0, y: -1, z: 0}
   wheels:
@@ -2195,6 +2197,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10881b4a1e548b541a66d9aa796bef34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   turretActive: 1
   cam: {fileID: 0}
   cameraTarget: {fileID: 1324666928}
@@ -2221,9 +2226,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c81b55deb7c55a2459efbdf4e0e87c95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   gunsActive: 0
-  currentBullets: 0
-  maxBulletsPerMag: 100
   bulletsLeft: 300
   fireRate: 0.17
   shotSound: {fileID: 8300000, guid: 0cc9598863ba7914c8938264d70b946c, type: 3}
@@ -2368,23 +2374,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &-817089925727773791
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5266051608369031855}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneId: 0
-  _assetId: 2350833469
-  serverOnly: 0
-  visibility: 0
-  hasSpawned: 0
 --- !u!1 &5266051608369237179
 GameObject:
   m_ObjectHideFlags: 0
