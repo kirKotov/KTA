@@ -104,7 +104,6 @@ MonoBehaviour:
   techNumber: 0
   textMeshName: {fileID: 876633391033339531}
   playerNickname: 
-  cam: {fileID: 4405483804580377410}
 --- !u!1 &1524004362307427375
 GameObject:
   m_ObjectHideFlags: 0
@@ -329,9 +328,9 @@ MonoBehaviour:
   syncRotation: 0
   syncScale: 0
   onlySyncOnChange: 1
-  compressRotation: 1
+  compressRotation: 0
   interpolatePosition: 1
-  interpolateRotation: 1
+  interpolateRotation: 0
   interpolateScale: 1
   coordinateSpace: 0
   sendIntervalMultiplier: 1

@@ -14,6 +14,18 @@ public class TechSelection : NetworkBehaviour
     [SyncVar(hook = nameof(HookSetName))]
     public string playerNickname = "";
 
+    private void Start()
+    {
+        if (isLocalPlayer)
+        {
+            StaticZVariables.playerCamera = GetComponentInChildren<Camera>();
+
+            floatingInfo.GetChild(0).gameObject.SetActive(false);
+
+            AssignName();
+        }
+    }
+
     void HookSetName(string _old, string _new)
     {
         AssignName();

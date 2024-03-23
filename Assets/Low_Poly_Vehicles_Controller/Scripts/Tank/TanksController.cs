@@ -36,7 +36,8 @@ public class TanksController : NetworkBehaviour
 	private AudioSource aSource;
 
     private TechSelection _techSelection;
-	private Camera _camera;
+
+    private GameObject _floatingTextObject;
 
     private void Start()
 	{
@@ -45,24 +46,30 @@ public class TanksController : NetworkBehaviour
 		aSource = GetComponent<AudioSource>();
 
         _techSelection = transform.root.GetComponent<TechSelection>();
-        _camera = transform.root.GetComponentInChildren<Camera>();
 
         leftTrack.enable = true;
 		rightTrack.enable = true;
 
-        if (isLocalPlayer)
-            _techSelection.floatingInfo.gameObject.GetComponentInChildren<RectTransform>().gameObject.SetActive(false);
+        if (!isLocalPlayer)
+            _floatingTextObject = _techSelection.floatingInfo.GetChild(0).gameObject;
     }
 
 	private void Update()
 	{
         if (!isLocalPlayer)
-            return;
+        {
+            if (_floatingTextObject == null)
+                _floatingTextObject = _techSelection.floatingInfo.GetChild(0).gameObject;
 
-        if (_techSelection != null && _camera != null)
+            if (StaticZVariables.playerCamera != null)
+                _floatingTextObject.transform.LookAt(_floatingTextObject.transform.position - (StaticZVariables.playerCamera.transform.position - _floatingTextObject.transform.position));
+
+            return;
+        }
+
+        if (_techSelection != null)
         {
             _techSelection.floatingInfo.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + 4.5f, gameObject.transform.position.z);
-            _techSelection.floatingInfo.transform.LookAt(_techSelection.floatingInfo.transform.position - (_camera.transform.position - _techSelection.floatingInfo.transform.position));
         }
 
         if (controlVehicle)

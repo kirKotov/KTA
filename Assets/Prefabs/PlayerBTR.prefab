@@ -98,13 +98,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   syncDirection: 1
-  syncMode: 1
+  syncMode: 0
   syncInterval: 0
   floatingInfo: {fileID: 7948394707372572812}
   techNumber: 0
   textMeshName: {fileID: 8430571567665094781}
   playerNickname: 
-  cam: {fileID: 4405483804580377410}
 --- !u!1 &2550809164885838421
 GameObject:
   m_ObjectHideFlags: 0
@@ -450,9 +449,9 @@ MonoBehaviour:
   syncRotation: 0
   syncScale: 0
   onlySyncOnChange: 1
-  compressRotation: 1
+  compressRotation: 0
   interpolatePosition: 1
-  interpolateRotation: 1
+  interpolateRotation: 0
   interpolateScale: 1
   coordinateSpace: 0
   sendIntervalMultiplier: 1
