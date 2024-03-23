@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Mirror;
-using UnityEngine.UIElements;
 
 [System.Serializable]
 public class wheel
@@ -52,7 +51,10 @@ public class VehicleController : NetworkBehaviour
 		{
 			wheels[i].antiStuck = wheels[i].wheelC.GetComponent<VehiclesAntiStuckSystem>();
 		}
-	}
+
+        if (isLocalPlayer)
+            _techSelection.floatingInfo.gameObject.GetComponentInChildren<RectTransform>().gameObject.SetActive(false);
+    }
 
 	private void Update()
 	{

@@ -26,8 +26,6 @@ public class CameraOrbit : NetworkBehaviour
 
     private TechSelection _techSelection;
 
-
-    // Use this for initialization
     void Start()
     {
         cam = GetComponent<Camera>();
@@ -40,10 +38,10 @@ public class CameraOrbit : NetworkBehaviour
     void FixedUpdate()
     {
         if (!isLocalPlayer)
+        {
             cam.gameObject.SetActive(false);
-
-        if (_techSelection != null)
-            _techSelection.floatingInfo.transform.LookAt(_techSelection.floatingInfo.transform.position - (cam.transform.position - _techSelection.floatingInfo.transform.position));
+            return;
+        }
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;

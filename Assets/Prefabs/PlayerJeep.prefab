@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b059fc8718f11ad44a9684b51aeae5ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  syncDirection: 0
+  syncDirection: 1
   syncMode: 0
   syncInterval: 0
   floatingInfo: {fileID: 5562418730112064168}
@@ -405,7 +405,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5562418730112064168}
-  - component: {fileID: 3552397717689203185}
+  - component: {fileID: 4359494948637426020}
   m_Layer: 0
   m_Name: FloatingInfo
   m_TagString: Untagged
@@ -429,7 +429,7 @@ Transform:
   - {fileID: 8067478020271509219}
   m_Father: {fileID: 1179002874405839196}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3552397717689203185
+--- !u!114 &4359494948637426020
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -449,9 +449,9 @@ MonoBehaviour:
   syncRotation: 0
   syncScale: 0
   onlySyncOnChange: 1
-  compressRotation: 1
+  compressRotation: 0
   interpolatePosition: 1
-  interpolateRotation: 1
+  interpolateRotation: 0
   interpolateScale: 1
   coordinateSpace: 0
   sendIntervalMultiplier: 1

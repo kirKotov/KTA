@@ -97,13 +97,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b059fc8718f11ad44a9684b51aeae5ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  syncDirection: 0
+  syncDirection: 1
   syncMode: 0
   syncInterval: 0
   floatingInfo: {fileID: 9129799369998039625}
   techNumber: 0
   textMeshName: {fileID: 876633391033339531}
   playerNickname: 
+  cam: {fileID: 4405483804580377410}
 --- !u!1 &1524004362307427375
 GameObject:
   m_ObjectHideFlags: 0

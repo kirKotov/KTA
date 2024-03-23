@@ -49,7 +49,10 @@ public class TanksController : NetworkBehaviour
 
         leftTrack.enable = true;
 		rightTrack.enable = true;
-	}
+
+        if (isLocalPlayer)
+            _techSelection.floatingInfo.gameObject.GetComponentInChildren<RectTransform>().gameObject.SetActive(false);
+    }
 
 	private void Update()
 	{
