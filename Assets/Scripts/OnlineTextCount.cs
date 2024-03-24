@@ -36,15 +36,18 @@ public class OnlineTextCount : MonoBehaviour
             {
                 _settingsMenu.SetActive(true);
 
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+
                 Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = false;
             }
             else
             {
-                _settingsMenu.SetActive(true);
+                _settingsMenu.SetActive(false);
 
-                Cursor.lockState = CursorLockMode.None;
-                Cursor.visible = true;
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
             }
         }
     }
