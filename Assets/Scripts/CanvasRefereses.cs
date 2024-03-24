@@ -39,12 +39,14 @@ public class CanvasRefereses : MonoBehaviour
     {
         StaticZVariables.techNumber = techNumber;
         StaticZVariables.playerHealth = _techData.techHealths[techNumber];
+        StaticZVariables.playerDamage = _techData.techDamage[techNumber];
 
         CreateTechMessage _characterMessage = new CreateTechMessage
         {
             techNumber = StaticZVariables.techNumber,
             playerNickname = StaticZVariables.playerNickname,
-            playerHealth = StaticZVariables.playerHealth
+            playerHealth = StaticZVariables.playerHealth,
+            playerDamage = StaticZVariables.playerDamage
         };
 
         NetworkManagerTechSelect.singleton.CreateTech(_characterMessage);

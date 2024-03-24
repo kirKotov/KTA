@@ -108,7 +108,7 @@ public class VehicleController : NetworkBehaviour
 		Steer();
 	}
 
-	public void GetInput()
+    public void GetInput()
 	{
 		m_horizontalInput = Input.GetAxis("Horizontal");
 		m_verticalInput = Input.GetAxis("Vertical");

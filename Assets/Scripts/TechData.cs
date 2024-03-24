@@ -7,6 +7,7 @@ public class TechData : MonoBehaviour
     public GameObject[] techPrefabs;
     public string[] techTitles;
     public int[] techHealths;
+    public int[] techDamage;
 
     public void Awake()
     {

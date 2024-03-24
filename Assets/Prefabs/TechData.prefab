@@ -55,3 +55,4 @@ MonoBehaviour:
   - BTR
   - Tank
   techHealths: 00000000e8030000b80b000088130000
+  techDamage: 0000000064000000c8000000e8030000

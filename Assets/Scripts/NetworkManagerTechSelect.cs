@@ -12,6 +12,7 @@ public class NetworkManagerTechSelect : NetworkManager
         public int techNumber;
         public string playerNickname;
         public int playerHealth;
+        public int playerDamage;
     }
 
     public override void OnStartServer()
@@ -36,6 +37,7 @@ public class NetworkManagerTechSelect : NetworkManager
         techSelection.techNumber = message.techNumber;
         techSelection.playerNickname = message.playerNickname;
         techSelection.techHealth = message.playerHealth;
+        techSelection.techDamage = message.playerDamage;
 
         NetworkServer.AddPlayerForConnection(conn, playerObject);
     }

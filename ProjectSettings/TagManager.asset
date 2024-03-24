@@ -19,6 +19,8 @@ TagManager:
   - Vehicles
   - Mine
   - VehiclesCamera
+  - PlayerCanvas
+  - PlayerHealthUI
   layers:
   - Default
   - TransparentFX

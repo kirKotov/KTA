@@ -43,9 +43,6 @@ public class CameraOrbit : NetworkBehaviour
             return;
         }
 
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-
         transform.parent.position = target.position;
 
         if (!CameraDisabled)
