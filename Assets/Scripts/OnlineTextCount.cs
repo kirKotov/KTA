@@ -3,8 +3,9 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using Mirror;
 
-public class OnlineTextCount : MonoBehaviour
+public class OnlineTextCount : NetworkBehaviour
 {
     [SerializeField] private TextMeshProUGUI _onlineText;
 
@@ -35,6 +36,9 @@ public class OnlineTextCount : MonoBehaviour
 
     private void Update()
     {
+        if (!isLocalPlayer)
+            return;
+
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (_isSettingOpen == false)
