@@ -12,6 +12,10 @@ public class OnlineTextCount : MonoBehaviour
 
     [SerializeField] private Slider _volumeSlider;
 
+    [SerializeField] private TurretController _turretController;
+    [SerializeField] private GunsController _gunsController;
+    [SerializeField] private CameraOrbit _cameraOrbit;
+
     private AudioSource _audioSource;
 
     private List<GameObject> _playerList = new List<GameObject>();
@@ -24,13 +28,14 @@ public class OnlineTextCount : MonoBehaviour
 
         _volumeSlider.onValueChanged.AddListener(ChangeVolume);
 
-        if (StaticZVariables.musicVolume >= 0)
-            _audioSource.volume = StaticZVariables.musicVolume;
+        _audioSource.volume = StaticZVariables.musicVolume;
+
+        _volumeSlider.value = StaticZVariables.musicVolume;
     }
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (_isSettingOpen == false)
             {
@@ -40,6 +45,10 @@ public class OnlineTextCount : MonoBehaviour
                 Cursor.visible = true;
 
                 _isSettingOpen = true;
+
+                _cameraOrbit.MouseSensitivity = 0;
+                _gunsController.enabled = false;
+                _turretController.enabled = false;
             }
             else
             {
@@ -49,6 +58,10 @@ public class OnlineTextCount : MonoBehaviour
                 Cursor.visible = false;
 
                 _isSettingOpen = false;
+
+                _cameraOrbit.MouseSensitivity = 6;
+                _gunsController.enabled = true;
+                _turretController.enabled = true;
             }
         }
     }
