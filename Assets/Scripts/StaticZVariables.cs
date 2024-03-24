@@ -12,4 +12,6 @@ public class StaticZVariables : MonoBehaviour
     public static Camera playerCamera = null;
 
     public static TechSelection playerTechSelection = null;
+
+    public static float musicVolume = -1;
 }

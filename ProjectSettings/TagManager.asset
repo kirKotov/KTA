@@ -21,6 +21,7 @@ TagManager:
   - VehiclesCamera
   - PlayerCanvas
   - PlayerHealthUI
+  - MusicObj
   layers:
   - Default
   - TransparentFX
