@@ -861,7 +861,6 @@ GameObject:
   - component: {fileID: 908883714}
   - component: {fileID: 908883717}
   - component: {fileID: 908883716}
-  - component: {fileID: 908883715}
   m_Layer: 0
   m_Name: NetworkManager
   m_TagString: Untagged
@@ -884,20 +883,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 11787873}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &908883715
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 908883713}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6442dc8070ceb41f094e44de0bf87274, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  offsetX: 0
-  offsetY: 0
 --- !u!114 &908883716
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -941,7 +926,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dontDestroyOnLoad: 1
   runInBackground: 1
-  headlessStartMode: 0
+  headlessStartMode: 2
   editorAutoStart: 0
   sendRate: 60
   autoStartServerBuild: 0
@@ -949,7 +934,7 @@ MonoBehaviour:
   offlineScene: 
   onlineScene: 
   transport: {fileID: 908883716}
-  networkAddress: localhost
+  networkAddress: 212.109.195.72
   maxConnections: 10
   disconnectInactiveConnections: 0
   disconnectInactiveTimeout: 60
@@ -1884,9 +1869,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f18bae4d3a1e7f848ba7b38f7c6a3c47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  syncDirection: 0
-  syncMode: 0
-  syncInterval: 0
   _inputFieldPlayerName: {fileID: 1082999436}
   _lockedBTR: {fileID: 246390121}
   _lockedTank: {fileID: 1647484628}

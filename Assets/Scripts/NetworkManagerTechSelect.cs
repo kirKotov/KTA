@@ -48,4 +48,11 @@ public class NetworkManagerTechSelect : NetworkManager
     {
         NetworkClient.Send(message);
     }
+
+    public override void Start()
+    {
+        base.Start();
+
+        NetworkManagerTechSelect.singleton.StartClient();
+    }
 }
