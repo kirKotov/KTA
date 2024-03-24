@@ -1884,6 +1884,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f18bae4d3a1e7f848ba7b38f7c6a3c47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   _inputFieldPlayerName: {fileID: 1082999436}
   _lockedBTR: {fileID: 246390121}
   _lockedTank: {fileID: 1647484628}

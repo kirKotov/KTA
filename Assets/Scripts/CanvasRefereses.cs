@@ -19,11 +19,11 @@ public class CanvasRefereses : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (StaticZVariables.playerKills >= 2)
+        if (StaticZVariables.playerKills >= 20)
         {
             _lockedBTR.gameObject.SetActive(false);
 
-            if (StaticZVariables.playerKills >= 6)
+            if (StaticZVariables.playerKills >= 60)
                 _lockedTank.gameObject.SetActive(false);
         }
     }
