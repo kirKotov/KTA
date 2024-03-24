@@ -40,13 +40,13 @@ public class CanvasRefereses : MonoBehaviour
 
     public void SelectBTR()
     {
-        if (StaticZVariables.playerKills >= 2)
+        if (StaticZVariables.playerKills >= 20)
             TechSelected(2);
     }
 
     public void SelectTank()
     {
-        if (StaticZVariables.playerKills >= 6)
+        if (StaticZVariables.playerKills >= 60)
             TechSelected(3);
     }
 
