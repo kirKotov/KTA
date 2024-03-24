@@ -6,7 +6,6 @@ public class CanvasRefereses : MonoBehaviour
 {
     [SerializeField] private TMP_InputField _inputFieldPlayerName;
 
-    private GameObject _currentInstantiatedTech;
     private TechSelection _techSelection;
 
     private TechData _techData;
@@ -39,11 +38,13 @@ public class CanvasRefereses : MonoBehaviour
     private void TechSelected(int techNumber)
     {
         StaticZVariables.techNumber = techNumber;
+        StaticZVariables.playerHealth = _techData.techHealths[techNumber];
 
         CreateTechMessage _characterMessage = new CreateTechMessage
         {
             techNumber = StaticZVariables.techNumber,
-            playerNickname = StaticZVariables.playerNickname
+            playerNickname = StaticZVariables.playerNickname,
+            playerHealth = StaticZVariables.playerHealth
         };
 
         NetworkManagerTechSelect.singleton.CreateTech(_characterMessage);

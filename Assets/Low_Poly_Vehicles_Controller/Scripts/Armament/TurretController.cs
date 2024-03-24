@@ -38,6 +38,7 @@ public class TurretController : NetworkBehaviour
             return;
 
         lookPosTransform = new GameObject("LookPos");
+        lookPosTransform.transform.SetParent(StaticZVariables.playerTechSelection.gameObject.transform);
 
         if (cam == null)
             Debug.LogWarning("No Camera Detected !");

@@ -11,6 +11,7 @@ public class NetworkManagerTechSelect : NetworkManager
     {
         public int techNumber;
         public string playerNickname;
+        public int playerHealth;
     }
 
     public override void OnStartServer()
@@ -34,6 +35,7 @@ public class NetworkManagerTechSelect : NetworkManager
         TechSelection techSelection = playerObject.GetComponent<TechSelection>();
         techSelection.techNumber = message.techNumber;
         techSelection.playerNickname = message.playerNickname;
+        techSelection.techHealth = message.playerHealth;
 
         NetworkServer.AddPlayerForConnection(conn, playerObject);
     }
