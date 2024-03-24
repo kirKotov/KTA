@@ -74,7 +74,7 @@ public class OnlineTextCount : NetworkBehaviour
     {
         _playerList = GameObject.FindGameObjectsWithTag("Vehicles").ToList();
 
-        _onlineText.text = $"Текущий онлайн: {_playerList.Count} / 10";
+        _onlineText.text = $"Игроков на карте: {_playerList.Count} / 10";
     }
 
     private void ChangeVolume(float volume)
