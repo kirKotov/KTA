@@ -7,6 +7,8 @@ public class NetworkManagerTechSelect : NetworkManager
 
     [SerializeField] private TechData _techData;
 
+    public int playerCount = 0;
+
     public struct CreateTechMessage : NetworkMessage
     {
         public int techNumber;

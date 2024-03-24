@@ -849,6 +849,7 @@ MonoBehaviour:
   evaluationInterval: 3
   timeInterpolationGui: 0
   _techData: {fileID: 1225926180}
+  playerCount: 0
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
