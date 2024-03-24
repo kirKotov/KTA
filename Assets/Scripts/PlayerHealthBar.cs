@@ -16,8 +16,6 @@ public class PlayerHealthBar : NetworkBehaviour
             return;
 
         _techSelection = transform.root.GetComponent<TechSelection>();
-
-        _maxHealth = StaticZVariables.playerHealth;
     }
 
     private void Update()
@@ -25,6 +23,6 @@ public class PlayerHealthBar : NetworkBehaviour
         if (!isLocalPlayer)
             return;
 
-        _healthImage.fillAmount = (float)_techSelection.techHealth / (float)_maxHealth;
+        _healthImage.fillAmount = (float)_techSelection.techHealth / (float)_techSelection.maxHealth;
     }
 }
