@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 using static NetworkManagerTechSelect;
 
@@ -6,13 +7,25 @@ public class CanvasRefereses : MonoBehaviour
 {
     [SerializeField] private TMP_InputField _inputFieldPlayerName;
 
-    private TechSelection _techSelection;
+    [SerializeField] private Image _lockedBTR;
+    [SerializeField] private Image _lockedTank;
 
     private TechData _techData;
 
     private void Start()
     {
         _techData = TechData.techDataSingleton;
+    }
+
+    private void FixedUpdate()
+    {
+        if (StaticZVariables.playerKills >= 2)
+        {
+            _lockedBTR.gameObject.SetActive(false);
+
+            if (StaticZVariables.playerKills >= 6)
+                _lockedTank.gameObject.SetActive(false);
+        }
     }
 
     public void InputFieldChangedPlayerName()
@@ -27,12 +40,14 @@ public class CanvasRefereses : MonoBehaviour
 
     public void SelectBTR()
     {
-        TechSelected(2);
+        if (StaticZVariables.playerKills >= 2)
+            TechSelected(2);
     }
 
     public void SelectTank()
     {
-        TechSelected(3);
+        if (StaticZVariables.playerKills >= 6)
+            TechSelected(3);
     }
 
     private void TechSelected(int techNumber)
