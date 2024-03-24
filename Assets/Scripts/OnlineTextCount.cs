@@ -39,8 +39,7 @@ public class OnlineTextCount : MonoBehaviour
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
 
-                Cursor.lockState = CursorLockMode.Locked;
-                Cursor.visible = false;
+                _isSettingOpen = true;
             }
             else
             {
@@ -48,6 +47,8 @@ public class OnlineTextCount : MonoBehaviour
 
                 Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = false;
+
+                _isSettingOpen = false;
             }
         }
     }
