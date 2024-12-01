@@ -52,7 +52,7 @@ public class NetworkManagerTechSelect : NetworkManager
     public override void Start()
     {
         base.Start();
-
+    
         NetworkManagerTechSelect.singleton.StartClient();
     }
 }

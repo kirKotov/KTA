@@ -19,11 +19,11 @@ public class CanvasRefereses : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (StaticZVariables.playerKills >= 20)
+        if (StaticZVariables.playerKills >= 2)
         {
             _lockedBTR.gameObject.SetActive(false);
 
-            if (StaticZVariables.playerKills >= 60)
+            if (StaticZVariables.playerKills >= 6)
                 _lockedTank.gameObject.SetActive(false);
         }
     }
@@ -40,13 +40,13 @@ public class CanvasRefereses : MonoBehaviour
 
     public void SelectBTR()
     {
-        if (StaticZVariables.playerKills >= 20)
+        if (StaticZVariables.playerKills >= 2)
             TechSelected(2);
     }
 
     public void SelectTank()
     {
-        if (StaticZVariables.playerKills >= 60)
+        if (StaticZVariables.playerKills >= 6)
             TechSelected(3);
     }
 
